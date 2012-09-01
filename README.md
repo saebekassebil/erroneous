@@ -32,12 +32,14 @@ process.on('uncaughtException', function(e) {
 
 Browser:
 ```html
-<script src='./lib/erroneous.js'></script>
-<script>
+<!-- Really simple embedding syntax with evaluation of the script tags' code -->
+<script src='./lib/erroneous.js'>
   // Send error to server for logging
   Erroneous.server('https://example.com/log');
+</script>
 
-  // Register a custom error handler
+<!-- And again you can register an unlimited number of error handlers -->
+<script>
   Erroneous.register(function(err) {
     console.log('Custom error handler..', err);
   });
