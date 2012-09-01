@@ -12,17 +12,19 @@ Installation is a breeze with npm (and no dependencies!):
 
 In browser-context Erroneous subscribes itself to the `error` event of the
 `window` object. Thus there's only the handling of the errors left. In Node.js
-you'll need to call `Erroneous.error` yourself - This is to provide a greater 
+you'll need to call `Erroneous.error` yourself - This is to provide a greater
 degree of freedom in your code.
 
 Node.js:
 ```javascript
 var Erroneous = require('erroneous');
 
-Erroneous.register(function(err) {
+// You can either initialize erroneous in this way (with an optional handler)
+Erroneous.listen().register(function(err) {
   console.log('Custom error handler..', err);
 });
 
+// or this way:
 process.on('uncaughtException', function(e) {
   Erroneous.error(e);
 });
@@ -71,5 +73,5 @@ the `Error` event.
  - *time* - A timestamp of the date when the error occured
  - *type* - The type of error occured (`SyntaxError`, `ReferenceError` etc.)
  - *target* - A string that tries to describe the target of the error
-    It can be an ID or a nodeName + classNames 
+    It can be an ID or a nodeName + classNames
 
