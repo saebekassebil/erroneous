@@ -74,4 +74,5 @@ the `Error` event.
  - *type* - The type of error occured (`SyntaxError`, `ReferenceError` etc.)
  - *target* - A string that tries to describe the target of the error
     It can be an ID or a nodeName + classNames
+ - *stack* - The stacktrace
 
