@@ -2,6 +2,8 @@
 
 JavaScript exception-handling for both client side and Node.js scripts
 
+**NB: THIS MODULE IS NO LONGER UNDER ACTIVE DEVELOPMENT SINCE I NO LONGER USE IT**
+
 ## Installation
 
 Installation is a breeze with npm (and no dependencies!):
